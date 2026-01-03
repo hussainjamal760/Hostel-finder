@@ -6,6 +6,7 @@ import ErrorHandler from "../utils/ErrorHandler";
 import sendMail from "../utils/sendmail";
 import { accessTokenOptions, refreshTokenOptions, sendToken } from "../utils/jwt";
 import { redis } from "../config/redis";
+import { getUserById } from "../services/user.service";
 
 interface IRegistrationBody {
   name: string;
@@ -246,3 +247,17 @@ export const updateAccessToken = CatchAsyncError(async(req:Request, res:Response
         return next(new ErrorHandler(error.message, 400));
     }
 });
+
+
+export const getUserInfo = CatchAsyncError(async (req:Request,res:Response,next:NextFunction)=>{
+    try{
+        const userId = req.user?._id.toString();
+        if (!userId) {
+        return next(new ErrorHandler("User not found", 400));
+        }
+        getUserById(userId,res)
+
+    }catch (error: any) {
+        return next(new ErrorHandler(error.message, 400));
+    }
+})
