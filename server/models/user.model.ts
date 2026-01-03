@@ -83,13 +83,14 @@ userSchema.pre<IUser>('save', async function () {
     this.password = await bcrypt.hash(this.password, 10);
 });
 
-userSchema.methods.SignAccessToken = function(){
-    return jwt.sign({id:this._id} , process.env.ACCESS_TOKEN || "")
+userSchema.methods.SignAccessToken = function() {
+    return jwt.sign({ id: this._id }, process.env.ACCESS_TOKEN as string, { expiresIn: '3d' });
 }
 
-userSchema.methods.SignRefreshToken = function(){
-    return jwt.sign({id:this._id} , process.env.REFRESH_TOKEN || "")
+userSchema.methods.SignRefreshToken = function() {
+    return jwt.sign({ id: this._id }, process.env.REFRESH_TOKEN as string, { expiresIn: '7d' });
 }
+
 
 userSchema.methods.comparePassword = async function(enteredPassword: string): Promise<boolean> {
     if (!this.password) return false;
