@@ -57,7 +57,7 @@ const userSchema: Schema<IUser> = new mongoose.Schema({
     },
     isActive: {
     type: Boolean,
-    default: true
+    default: false
     },
     hostel: {
         type: mongoose.Schema.Types.ObjectId,
