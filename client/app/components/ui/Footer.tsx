@@ -2,170 +2,227 @@
 
 import React from "react";
 import Link from "next/link";
-import { 
-    HiOutlineLocationMarker, 
-    HiOutlineMail, 
-    HiOutlinePhone,
-    HiOutlineArrowRight
+import {
+  HiOutlineLocationMarker,
+  HiOutlineMail,
+  HiOutlinePhone,
+  HiOutlineArrowRight,
 } from "react-icons/hi";
-import { 
-    FaFacebookF, 
-    FaTwitter, 
-    FaInstagram, 
-    FaLinkedinIn,
-    FaWhatsapp,
-    FaGithub
+import {
+  FaLinkedinIn,
+  FaWhatsapp,
+  FaGithub,
 } from "react-icons/fa";
 
 const Footer = () => {
-    const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
 
-    const footerLinks = {
-        explore: [
-            { name: "Find Hostels", href: "/hostels" },
-            { name: "Browse by City", href: "/hostels" },
-            { name: "Popular Areas", href: "/hostels" },
-            { name: "Map View", href: "/hostels" },
-        ],
-        forManagers: [
-            { name: "List Your Hostel", href: "/hostel-dashboard" },
-            { name: "Manager Dashboard", href: "/hostel-dashboard" },
-            { name: "About", href: "/about" },
-        ],
-        support: [
-            { name: "Help Center", href: "/contact" },
-            { name: "Contact Us", href: "/contact" },
-            { name: "Terms of Service", href: "/terms" },
-        ],
-    };
+  const footerLinks = {
+    explore: [
+      { name: "Find Hostels", href: "/hostels" },
+      { name: "Browse by City", href: "/hostels" },
+      { name: "Popular Areas", href: "/hostels" },
+      { name: "Map View", href: "/hostels" },
+    ],
+    forManagers: [
+      { name: "List Your Hostel", href: "/hostel-dashboard" },
+      { name: "Manager Dashboard", href: "/hostel-dashboard" },
+      { name: "About", href: "/about" },
+    ],
+    support: [
+      { name: "Help Center", href: "/contact" },
+      { name: "Contact Us", href: "/contact" },
+      { name: "Terms of Service", href: "/terms" },
+    ],
+  };
 
-    const socialLinks = [
-        { icon: FaLinkedinIn, href: "https://www.linkedin.com/in/hussain-jamal-b5a76531a/", label: "LinkedIn" },
-        { icon: FaGithub, href: "https://github.com/hussainjamal760", label: "GitHub" },
-        { icon: FaWhatsapp, href: "+923181792848", label: "WhatsApp" },
-    ];
+  const socialLinks = [
+    {
+      icon: FaLinkedinIn,
+      href: "https://www.linkedin.com/in/hussain-jamal-b5a76531a/",
+      label: "LinkedIn",
+    },
+    {
+      icon: FaGithub,
+      href: "https://github.com/hussainjamal760",
+      label: "GitHub",
+    },
+    {
+      icon: FaWhatsapp,
+      href: "https://wa.me/923181792848",
+      label: "WhatsApp",
+    },
+  ];
 
-    return (
-        <footer className="bg-[#1a0f0a] dark:bg-[#fcf2e9] relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#fcf2e9]/20 dark:via-[#2c1b13]/20 to-transparent" />
-            <div className="absolute -top-40 -right-40 w-[400px] h-[400px] bg-[#2c1b13]/30 rounded-full blur-[100px]" />
-            <div className="absolute -bottom-40 -left-40 w-[300px] h-[300px] bg-[#2c1b13]/20 rounded-full blur-[80px]" />
+  return (
+    <footer className="relative overflow-hidden bg-[#1a0f0a] dark:bg-[#fcf2e9]">
+      {/* Decorative Background */}
+      <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-transparent via-[#fcf2e9]/20 dark:via-[#2c1b13]/20 to-transparent" />
+      <div className="absolute -top-40 -right-40 h-[400px] w-[400px] rounded-full bg-[#2c1b13]/30 blur-[100px]" />
+      <div className="absolute -bottom-40 -left-40 h-[300px] w-[300px] rounded-full bg-[#2c1b13]/20 blur-[80px]" />
 
-            <div className="max-w-[1440px] mx-auto px-6 md:px-12 pt-20 pb-8 relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
-                    <div className="lg:col-span-4">
-                        <Link href="/" className="inline-block mb-6">
-                            <h2 className="text-2xl font-heading font-bold text-[#fcf2e9] dark:text-[#2c1b13]">
-                                Hostelites<span className="text-[#fcf2e9]/50 dark:text-[#2c1b13]/50"></span>
-                            </h2>
-                        </Link>
-                        <p className="text-[#fcf2e9]/60 dark:text-[#2c1b13]/60 mb-6 max-w-sm leading-relaxed">
-                            Pakistan's #1 platform for finding and listing quality hostels. Connecting students and professionals with their perfect accommodation.
-                        </p>
-                        
-                        <div className="space-y-3">
-                            <div className="flex items-center gap-3 text-[#fcf2e9]/60 dark:text-[#2c1b13]/60">
-                                <HiOutlineLocationMarker size={18} />
-                                <span className="text-sm">Lahore, Pakistan</span>
-                            </div>
-                            <div className="flex items-center gap-3 text-[#fcf2e9]/60 dark:text-[#2c1b13]/60">
-                                <HiOutlineMail size={18} />
-                                <span className="text-sm">hjamal9865@gmail.com</span>
-                            </div>
-                            <div className="flex items-center gap-3 text-[#fcf2e9]/60 dark:text-[#2c1b13]/60">
-                                <HiOutlinePhone size={18} />
-                                <span className="text-sm">+92 318 1792848</span>
-                            </div>
-                        </div>
-                    </div>
+      <div className="relative z-10 mx-auto max-w-[1440px] px-6 pt-20 pb-8 md:px-12">
+        {/* Main Footer */}
+        <div className="mb-16 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+          {/* Brand Section */}
+          <div className="lg:col-span-4">
+            <Link href="/" className="mb-6 inline-block">
+              <h2 className="text-2xl font-bold text-[#fcf2e9] dark:text-[#2c1b13]">
+                Hostelites
+              </h2>
+            </Link>
 
-                    <div className="lg:col-span-2">
-                        <h3 className="text-sm font-bold uppercase tracking-wider text-[#fcf2e9] dark:text-[#2c1b13] mb-6">
-                            Explore
-                        </h3>
-                        <ul className="space-y-3">
-                            {footerLinks.explore.map((link) => (
-                                <li key={link.name}>
-                                    <Link 
-                                        href={link.href}
-                                        className="text-[#fcf2e9]/60 dark:text-[#2c1b13]/60 hover:text-[#fcf2e9] dark:hover:text-[#2c1b13] transition-colors text-sm"
-                                    >
-                                        {link.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+            <p className="mb-6 max-w-sm leading-relaxed text-[#fcf2e9]/60 dark:text-[#2c1b13]/60">
+              Pakistan&apos;s #1 platform for finding and listing quality
+              hostels. Connecting students and professionals with their
+              perfect accommodation.
+            </p>
 
-                    <div className="lg:col-span-2">
-                        <h3 className="text-sm font-bold uppercase tracking-wider text-[#fcf2e9] dark:text-[#2c1b13] mb-6">
-                            For Managers
-                        </h3>
-                        <ul className="space-y-3">
-                            {footerLinks.forManagers.map((link) => (
-                                <li key={link.name}>
-                                    <Link 
-                                        href={link.href}
-                                        className="text-[#fcf2e9]/60 dark:text-[#2c1b13]/60 hover:text-[#fcf2e9] dark:hover:text-[#2c1b13] transition-colors text-sm"
-                                    >
-                                        {link.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 text-[#fcf2e9]/60 dark:text-[#2c1b13]/60">
+                <HiOutlineLocationMarker size={18} />
+                <span className="text-sm">Lahore, Pakistan</span>
+              </div>
 
-                    <div className="lg:col-span-4">
-                        <h3 className="text-sm font-bold uppercase tracking-wider text-[#fcf2e9] dark:text-[#2c1b13] mb-6">
-                            Stay Updated
-                        </h3>
-                        <p className="text-[#fcf2e9]/60 dark:text-[#2c1b13]/60 text-sm mb-4">
-                            Subscribe to get the latest hostels and exclusive deals.
-                        </p>
-                        <div className="flex gap-2">
-                            <input 
-                                type="email" 
-                                placeholder="Enter your email"
-                                className="flex-1 px-4 py-3 rounded-xl bg-[#fcf2e9]/5 dark:bg-[#2c1b13]/5 border border-[#fcf2e9]/10 dark:border-[#2c1b13]/10 text-[#fcf2e9] dark:text-[#2c1b13] placeholder:text-[#fcf2e9]/40 dark:placeholder:text-[#2c1b13]/40 focus:outline-none focus:border-[#fcf2e9]/30 dark:focus:border-[#2c1b13]/30 transition-colors text-sm"
-                            />
-                            <button className="px-4 py-3 rounded-xl bg-[#fcf2e9] dark:bg-[#2c1b13] text-[#2c1b13] dark:text-[#fcf2e9] hover:scale-105 active:scale-95 transition-transform">
-                                <HiOutlineArrowRight size={18} />
-                            </button>
-                        </div>
+              <div className="flex items-center gap-3 text-[#fcf2e9]/60 dark:text-[#2c1b13]/60">
+                <HiOutlineMail size={18} />
+                <a
+                  href="mailto:hjamal9865@gmail.com"
+                  className="text-sm hover:text-[#fcf2e9] dark:hover:text-[#2c1b13]"
+                >
+                  hjamal9865@gmail.com
+                </a>
+              </div>
 
-                        <div className="flex gap-3 mt-8">
-                            {socialLinks.map((social) => (
-                                <a
-                                    key={social.label}
-                                    href={social.href}
-                                    aria-label={social.label}
-                                    className="p-3 rounded-xl bg-[#fcf2e9]/5 dark:bg-[#2c1b13]/5 text-[#fcf2e9]/60 dark:text-[#2c1b13]/60 hover:bg-[#fcf2e9]/10 dark:hover:bg-[#2c1b13]/10 hover:text-[#fcf2e9] dark:hover:text-[#2c1b13] transition-all"
-                                >
-                                    <social.icon size={16} />
-                                </a>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-
-                <div className="pt-8 border-t border-[#fcf2e9]/10 dark:border-[#2c1b13]/10">
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                        <p className="text-[#fcf2e9]/40 dark:text-[#2c1b13]/40 text-sm">
-                            © {currentYear} Hostelites. All rights reserved.
-                        </p>
-                        <div className="flex items-center gap-6">
-                            <Link href="/privacy" className="text-[#fcf2e9]/40 dark:text-[#2c1b13]/40 hover:text-[#fcf2e9]/70 dark:hover:text-[#2c1b13]/70 text-sm transition-colors">
-                                Privacy Policy
-                            </Link>
-                            <Link href="/terms" className="text-[#fcf2e9]/40 dark:text-[#2c1b13]/40 hover:text-[#fcf2e9]/70 dark:hover:text-[#2c1b13]/70 text-sm transition-colors">
-                                Terms of Service
-                            </Link>
-                        </div>
-                    </div>
-                </div>
+              <div className="flex items-center gap-3 text-[#fcf2e9]/60 dark:text-[#2c1b13]/60">
+                <HiOutlinePhone size={18} />
+                <a
+                  href="tel:+923181792848"
+                  className="text-sm hover:text-[#fcf2e9] dark:hover:text-[#2c1b13]"
+                >
+                  +92 318 1792848
+                </a>
+              </div>
             </div>
-        </footer>
-    );
+          </div>
+
+          {/* Explore */}
+          <div className="lg:col-span-2">
+            <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-[#fcf2e9] dark:text-[#2c1b13]">
+              Explore
+            </h3>
+
+            <ul className="space-y-3">
+              {footerLinks.explore.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-[#fcf2e9]/60 transition-colors hover:text-[#fcf2e9] dark:text-[#2c1b13]/60 dark:hover:text-[#2c1b13]"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Managers */}
+          <div className="lg:col-span-2">
+            <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-[#fcf2e9] dark:text-[#2c1b13]">
+              For Managers
+            </h3>
+
+            <ul className="space-y-3">
+              {footerLinks.forManagers.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-[#fcf2e9]/60 transition-colors hover:text-[#fcf2e9] dark:text-[#2c1b13]/60 dark:hover:text-[#2c1b13]"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div className="lg:col-span-4">
+            <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-[#fcf2e9] dark:text-[#2c1b13]">
+              Stay Updated
+            </h3>
+
+            <p className="mb-4 text-sm text-[#fcf2e9]/60 dark:text-[#2c1b13]/60">
+              Subscribe to get the latest hostels and exclusive deals.
+            </p>
+
+            <form
+              onSubmit={(e) => e.preventDefault()}
+              className="flex gap-2"
+            >
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 rounded-xl border border-[#fcf2e9]/10 bg-[#fcf2e9]/5 px-4 py-3 text-sm text-[#fcf2e9] placeholder:text-[#fcf2e9]/40 focus:border-[#fcf2e9]/30 focus:outline-none dark:border-[#2c1b13]/10 dark:bg-[#2c1b13]/5 dark:text-[#2c1b13] dark:placeholder:text-[#2c1b13]/40 dark:focus:border-[#2c1b13]/30"
+              />
+
+              <button
+                type="submit"
+                className="rounded-xl bg-[#fcf2e9] px-4 py-3 text-[#2c1b13] transition-transform hover:scale-105 active:scale-95 dark:bg-[#2c1b13] dark:text-[#fcf2e9]"
+              >
+                <HiOutlineArrowRight size={18} />
+              </button>
+            </form>
+
+            {/* Social Links */}
+            <div className="mt-8 flex gap-3">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+
+                return (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    className="rounded-xl bg-[#fcf2e9]/5 p-3 text-[#fcf2e9]/60 transition-all hover:bg-[#fcf2e9]/10 hover:text-[#fcf2e9] dark:bg-[#2c1b13]/5 dark:text-[#2c1b13]/60 dark:hover:bg-[#2c1b13]/10 dark:hover:text-[#2c1b13]"
+                  >
+                    <Icon size={16} />
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Footer */}
+        <div className="border-t border-[#fcf2e9]/10 pt-8 dark:border-[#2c1b13]/10">
+          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+            <p className="text-sm text-[#fcf2e9]/40 dark:text-[#2c1b13]/40">
+              © {currentYear} Hostelites. All rights reserved.
+            </p>
+
+            <div className="flex items-center gap-6">
+              <Link
+                href="/privacy"
+                className="text-sm text-[#fcf2e9]/40 transition-colors hover:text-[#fcf2e9]/70 dark:text-[#2c1b13]/40 dark:hover:text-[#2c1b13]/70"
+              >
+                Privacy Policy
+              </Link>
+
+              <Link
+                href="/terms"
+                className="text-sm text-[#fcf2e9]/40 transition-colors hover:text-[#fcf2e9]/70 dark:text-[#2c1b13]/40 dark:hover:text-[#2c1b13]/70"
+              >
+                Terms of Service
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;
